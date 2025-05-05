@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>الرجب</title>
+  <link rel="icon" href="mm.jpg">
+  <link rel="styleSheet" href="mhmd.css">
+</head>
+<body>
+  
+  
+  
+  
+<div id="myModal" class="modal2">
+    <div class="modal-content">
+        <h1 style="font-size: 50px;,width: 90%;margin:0px auto;color:white" id="modalTitle"></h1>
+        <h1 style="font-size: 45px;,width: 90%;margin:10px auto;color:yellow"  id="modalMessage"></h1>
+        <button class="confirm-btn" id="confirmBtn">موافق</button>
+    </div>
+</div>
+
+
+
+  
+  <div id="myModal1" class="modal">
+  <div style="height: 200px;" class="modal-content">
+    <span  class="close">&times;</span>
+    <div style="width: 100%;margin: -40px auto;text-align: center;">
+      
+    
+    <h2 style="font-size:30px;margin: 20px auto;">ادخل اسم المنتج</h2>
+    <input style="margin: -30px auto;" type="text" id="input1"><br><br>
+    
+    <h2 style="font-size:30px;margin: -20px auto;">ادخل سعر المنتج</h2>
+    <input style="margin: 20px auto;" type="number" id="input2"><br><br>
+    <button style="font-size:30px;margin: -20px auto;" class="but" id="submitBtn">أضف</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div id="p12" class="popup">  
+    <h2 style="width:90%;margin:10px auto;text-align: center;font-size: 40px; " >أدخل سعر <span id="pe" style="color:white;  text-shadow: 10px 5px 10px rgba(61, 202, 202, 0.8);
+" >زر</span></h2> 
+    
+    
+    <input placeholder="1USA  =   [---]YSR"  type="Number" id="vvl">
+    <div style="width:100%;display: flex;justify-content: center;margin: 10px;margin-bottom: -20px;">
+    <button onclick="saveValue12()">أرسل</button>  </div>
+  </div>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+  <div id="popup" class="popup">  
+    <h2 style="width:90%;margin:10px auto;text-align: center;font-size: 40px;">أدخل سعر الصرف</h2> 
+    
+    
+    <input placeholder="1USA  =   [---]YSR"  type="Number" id="inputValue">
+    <div style="width:100%;display: flex;justify-content: center;margin: 10px;margin-bottom: -20px;">
+    <button onclick="saveValue()">أرسل</button>  </div>
+  </div>  
+    
+    
+  <div id="kk">
+  
+  <header class="head">
+    <h1>مخزن الرجب</h1>
+    <button  style="position: absolute;right:30px;top:20px;border-radius: 50px;width:05px;height: 35px; background:none;border-style:none ; font-size: 35px;color: mediumvioletred;transform: rotate(-90deg);" id="kjk">&circlearrowleft;</button>
+  </header>
+  
+  <nav class="nav">
+    <ul>
+      <li>
+        <a href="#" id="openModalBtnw">إضافة</a>
+      </li>
+      <li>
+        <a id="del" href="#">حذف</a>
+      </li>
+      <li>
+        <a id="prom" href="#">تعديل</a>
+      </li>
+    
+      
+    </ul>
+  </nav>
+
+  
+  <section class="section">
+    <h1 id="name" style="color:yellow;margin:0px auto;"></h1>
+    <h1 id="much" style="color: indianred;margin:-10px auto">السعر</h1>
+    
+    <h1 style="width:100%;margin:-10px;color: darkorange;font-size: 30px;">
+      <span id="muchusa" style="margin:10px auto;display: block;">USA</span>
+      <span id="muchsyr" style="margin:10px autp ;display: block;">SYR</span>
+    
+    </h1>
+  </section>
+  
+  
+  <section class="section section1">
+    <select name="select" id="sel" class="select">
+
+    </select>
+    
+    
+    
+    <button style="margin-top: 4px;" id="btnserch" class="but">search</button>
+    <div style="height:7px"></div>
+    <input class="input" type="search" name="an" id="inp" />
+  
+    
+    <button style="margin-top: 5px;" id="btninput" class="but">input</button>
+  </section>
+  <footer>
+    <h1 class="h1">المالك:محمد نور المحمد</h1>
+    <h1 class="h1">للتواصل</h1>
+    <a class="a" href="tel:+963951751059">هاتف</a>
+  </footer>
+  </div>
+  
+  <script>
+  let sar = "123mhra0957321";
+let pa1s = false;
+
+// تحقق مما إذا كانت كلمة المرور مخزنة في localStorage
+let pes = localStorage.getItem("pas");
+pa1s = pes === "true"; // تحويل القيمة إلى boolean
+
+// إذا كانت كلمة المرور صحيحة أو تم إدخالها بشكل صحيح
+if (pa1s) {
+  document.getElementsByTagName("body")[0].style.display = "block"; // عرض الجسم
+} else {
+  document.getElementsByTagName("body")[0].style.display = "none"; // إخفاء الجسم
+  
+  // طلب كلمة مرور من المستخدم
+  let sara = prompt("أدخل كلمة المرور");
+  
+  if (sar === sara) {
+    pa1s = true; // تعيين حالة الدخول إلى true
+    localStorage.setItem("pas", pa1s); // حفظ الحالة في localStorage
+    document.getElementsByTagName("body")[0].style.display = "block"; // عرض الجسم
+  } else {
+    localStorage.setItem("pas", pa1s); // حفظ الحالة في localStorage
+  }
+}
+
+
+// دالة لعرض النافذة المنبثقة
+function aler(title, message) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalMessage").innerText = message;
+    document.getElementById("myModal").style.display = "block";
+}
+
+// عند الضغط على زر "موافق"، أغلق النافذة
+document.getElementById("confirmBtn").onclick = function() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+// عند النقر في أي مكان خارج النافذة، أغلقها
+
+</script>
+  
+   <script>   
+      function saveValue() {
+
+      let exchangeRat = document.getElementById("inputValue").value;
+      if (exchangeRat.trim() === "") {
+        aler("لا قيمة","الرجاء أدخال سعر")
+      } else {
+        document.getElementById("kk").style.display = "block"
+
+        
+        let value = document.getElementById("inputValue").value;
+      numbe=value
+        document.getElementById("popup").style.display = "none"; // إخفاء النافذة بعد الحفظ  
+      }
+      }
+    
+    
+  
+    window.onload = function() {
+    document.getElementById("kk").style.display = "none"
+    
+    document.getElementById("popup").style.display = "block"; // اظهار النافذة عند تحميل الصفحة  
+  
+  
+  }
+kjk.onclick = function() {
+  
+  
+  document.getElementById("kk").style.display = "none"
+  
+  document.getElementById("popup").style.display = "block"; // اظهار النافذة عند تحميل الصفحة 
+  // Tab to edit
+}
+  
+</script>
+
+ 
+  
+
+<script src="mhmd.js"></script>
+
+
+</body>
+
+</html>
